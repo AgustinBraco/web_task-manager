@@ -19,10 +19,283 @@ body {
   background-color: #ffffff;
   cursor: url("/icons/cursor.png"), pointer;
   overflow-x: hidden;
+  width: 85vw;
+  margin: auto;
 }
 body::selection {
   background-color: #d9d9d9;
   color: #000000;
+}
+
+.app {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  margin-top: 2.4rem;
+  gap: 2.4rem;
+}
+.app .app-title {
+  font-size: 3.2rem;
+  font-weight: bold;
+}
+
+.bar {
+  width: 100%;
+  height: 5rem;
+  border-radius: 0.8rem;
+  background-color: #d9d9d9;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-inline: 0.5rem;
+}
+.bar .bar-item {
+  width: 33.3%;
+  background-color: transparent;
+  border: none;
+  font-size: 1.4rem;
+  border-radius: 0.6rem;
+  color: rgba(0, 0, 0, 0.5);
+  height: 4rem;
+  cursor: url("/icons/pointer.png"), pointer;
+  transition: ease all 0.4s;
+}
+.bar .bar-item.active {
+  color: #000000;
+  background-color: #ffffff;
+  font-weight: bold;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100vw;
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999999;
+}
+.modal.creat, .modal.put {
+  display: flex;
+}
+.modal.close {
+  display: none;
+}
+.modal .modal-wrapper {
+  padding: 2rem;
+  width: 90%;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: start;
+  align-items: center;
+  gap: 2rem;
+}
+.modal .modal-wrapper .modal-title {
+  font-size: 2.4rem;
+  font-weight: bold;
+  height: 10%;
+}
+.modal .modal-wrapper .modal-form {
+  width: 90%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: start;
+  gap: 2rem;
+}
+.modal .modal-wrapper .modal-form .modal-label {
+  display: flex;
+  flex-flow: column nowrap;
+  font-size: 1.6rem;
+  font-weight: bold;
+  width: 100%;
+  gap: 0.5rem;
+}
+.modal .modal-wrapper .modal-form .modal-input {
+  border: solid 0.2rem #d9d9d9;
+  border-radius: 0.8rem;
+  padding: 1.2rem;
+  font-size: 1.4rem;
+  background-color: transparent;
+  color: #000000;
+  cursor: url("/icons/pointer.png"), pointer;
+  height: 4rem;
+}
+.modal .modal-wrapper .modal-form .modal-input::placeholder {
+  font-size: 1.4rem;
+}
+.modal .modal-wrapper .modal-form .modal-input:focus {
+  outline: none;
+}
+.modal .modal-wrapper .modal-form .modal-button {
+  width: 100%;
+  border-radius: 0.8rem;
+  padding: 1.2rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  cursor: url("/icons/pointer.png"), pointer;
+}
+.modal .modal-wrapper .modal-form .modal-button:focus {
+  outline: none;
+}
+.modal .modal-wrapper .modal-form .modal-button.submit {
+  background-color: #000000;
+  border: solid 0.2rem #000000;
+  color: #ffffff;
+  margin-bottom: -1rem;
+}
+.modal .modal-wrapper .modal-form .modal-button.submit:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+.modal .modal-wrapper .modal-form .modal-button.cancel {
+  background-color: transparent;
+  color: #808080;
+  border: solid 0.2rem #d9d9d9;
+}
+
+.tasks {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+.tasks .tasks-title {
+  font-size: 1.8rem;
+  color: #808080;
+}
+
+.task {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border: solid 0.2rem #d9d9d9;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+.task .task-check {
+  border: solid 0.2rem #d9d9d9;
+  border-radius: 50%;
+  width: 3.6rem;
+  height: 3.6rem;
+  cursor: url("/icons/pointer.png"), pointer;
+}
+.task .task-check.completed {
+  border: solid 0.2rem #808080;
+  background-color: #808080;
+  text-decoration: line-through;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.task .task-check.completed::after {
+  content: "";
+  background-image: url("icons/check.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 2.6rem;
+  height: 2.6rem;
+}
+.task .task-info {
+  width: 65%;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0.6rem;
+  padding-inline: 1rem;
+}
+.task .task-info .task-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+.task .task-info .task-title.completed {
+  text-decoration: line-through;
+}
+.task .task-info .task-description {
+  font-size: 1.4rem;
+}
+.task .task-info .task-description.completed {
+  text-decoration: line-through;
+}
+.task .task-info .task-bottom {
+  display: flex;
+  flex-flow: row nowrap;
+  margin-top: 0.4rem;
+  gap: 2rem;
+}
+.task .task-info .task-bottom .task-item {
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+}
+.task .task-info .task-bottom .task-item.completed {
+  text-decoration: line-through;
+}
+.task .task-info .task-bottom .task-item::before {
+  content: "";
+  width: 2rem;
+  height: 2rem;
+  background-repeat: no-repeat;
+  background-size: 2rem;
+  background-position: center;
+}
+.task .task-info .task-bottom .task-item.date::before {
+  background-image: url("/icons/calendar.png");
+}
+.task .task-info .task-bottom .task-item.priority::before {
+  background-image: url("/icons/priority.png");
+}
+.task .task-actions {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 0.4rem;
+}
+.task .task-actions .task-action {
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 3.2rem;
+  height: 3.2rem;
+  cursor: url("/icons/pointer.png"), pointer;
+}
+.task .task-actions .task-action.edit {
+  background-image: url("/icons/edit.png");
+}
+.task .task-actions .task-action.delete {
+  background-image: url("/icons/delete.png");
+}
+
+.add {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  margin: 1rem;
+  bottom: 0;
+  right: 0;
+  width: 6rem;
+  height: 6rem;
+  background-color: #000000;
+  border: none;
+  border-radius: 50%;
+  cursor: url("/icons/pointer.png"), pointer;
+}
+.add::after {
+  content: "";
+  background-image: url("/icons/add.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 2.5rem;
+  height: 2.5rem;
 }
 
 /*# sourceMappingURL=styles.css.map */

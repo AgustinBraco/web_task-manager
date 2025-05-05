@@ -1,0 +1,123 @@
+.task {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border: solid 0.2rem $grey-light;
+  border-radius: 1rem;
+  padding: 1rem;
+
+  .task-check {
+    border: solid 0.2rem $grey-light;
+    border-radius: 50%;
+    width: 3.6rem;
+    height: 3.6rem;
+    cursor: url('/icons/pointer.png'), pointer;
+
+    &.completed {
+      border: solid 0.2rem $grey-dark;
+      background-color: $grey-dark;
+      text-decoration: line-through;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &::after {
+        content: '';
+        background-image: url('icons/check.png');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 2.6rem;
+        height: 2.6rem;
+      }
+    }
+  }
+
+  .task-info {
+    width: 65%;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 0.6rem;
+    padding-inline: 1rem;
+
+    .task-title {
+      font-size: 1.8rem;
+      font-weight: bold;
+
+      &.completed {
+        text-decoration: line-through;
+      }
+    }
+
+    .task-description {
+      font-size: 1.4rem;
+
+      &.completed {
+        text-decoration: line-through;
+      }
+    }
+
+    .task-bottom {
+      display: flex;
+      flex-flow: row nowrap;
+      margin-top: 0.4rem;
+      gap: 2rem;
+
+      .task-item {
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+
+        &.completed {
+          text-decoration: line-through;
+        }
+
+        &::before {
+          content: '';
+          width: 2rem;
+          height: 2rem;
+          background-repeat: no-repeat;
+          background-size: 2rem;
+          background-position: center;
+        }
+
+        &.date {
+          &::before {
+            background-image: url('/icons/calendar.png');
+          }
+        }
+
+        &.priority {
+          &::before {
+            background-image: url('/icons/priority.png');
+          }
+        }
+      }
+    }
+  }
+
+  .task-actions {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 0.4rem;
+
+    .task-action {
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 3.2rem;
+      height: 3.2rem;
+      cursor: url('/icons/pointer.png'), pointer;
+
+      &.edit {
+        background-image: url('/icons/edit.png');
+      }
+
+      &.delete {
+        background-image: url('/icons/delete.png');
+      }
+    }
+  }
+}

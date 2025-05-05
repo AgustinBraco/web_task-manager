@@ -30,6 +30,9 @@ body {
   cursor: url('/icons/cursor.png'), pointer;
   overflow-x: hidden;
 
+  width: 85vw;
+  margin: auto;
+
   &::selection {
     background-color: $grey-light;
     color: $black;

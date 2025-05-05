@@ -2,3 +2,13 @@
 @import 'global/responsive';
 @import 'global/keyframes';
 @import 'global/global';
+
+// App
+@import 'app/App';
+
+// Components
+@import 'components/Bar';
+@import 'components/Modal';
+@import 'components/Tasks';
+@import 'components/Task';
+@import 'components/Add';

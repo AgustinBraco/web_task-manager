@@ -1,0 +1,13 @@
+.tasks {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 4rem;
+
+  .tasks-title {
+    font-size: 1.8rem;
+    color: $grey-dark;
+  }
+}
