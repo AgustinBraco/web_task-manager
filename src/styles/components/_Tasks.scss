@@ -9,5 +9,9 @@
   .tasks-title {
     font-size: 1.8rem;
     color: $grey-dark;
+
+    @include responsive('laptop') {
+      font-size: 2rem;
+    }
   }
 }

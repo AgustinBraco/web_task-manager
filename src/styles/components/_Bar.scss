@@ -7,7 +7,7 @@
   justify-content: space-around;
   align-items: center;
   padding-inline: 0.5rem;
-
+  
   .bar-item {
     width: 33.3%;
     background-color: transparent;
@@ -18,6 +18,10 @@
     height: 4rem;
     cursor: url('/icons/pointer.png'), pointer;
     transition: ease all 0.4s;
+
+    @include responsive('laptop') {
+      font-size: 1.6rem;
+    }
 
     &.active {
       color: $black;

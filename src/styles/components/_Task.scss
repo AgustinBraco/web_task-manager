@@ -25,7 +25,7 @@
 
       &::after {
         content: '';
-        background-image: url('icons/check.png');
+        background-image: url('/icons/check.png');
         background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
@@ -46,6 +46,10 @@
       font-size: 1.8rem;
       font-weight: bold;
 
+      @include responsive('laptop') {
+        font-size: 2.2rem;
+      }
+
       &.completed {
         text-decoration: line-through;
       }
@@ -53,6 +57,10 @@
 
     .task-description {
       font-size: 1.4rem;
+
+      @include responsive('laptop') {
+        font-size: 1.6rem;
+      }
 
       &.completed {
         text-decoration: line-through;
@@ -70,6 +78,10 @@
         display: flex;
         align-items: center;
 
+        @include responsive('laptop') {
+          font-size: 1.4rem;
+        }
+
         &.completed {
           text-decoration: line-through;
         }
@@ -81,6 +93,12 @@
           background-repeat: no-repeat;
           background-size: 2rem;
           background-position: center;
+
+          @include responsive('laptop') {
+            width: 2.4rem;
+            height: 2.4rem;
+            background-size: 2.4rem;
+          }
         }
 
         &.date {
@@ -103,6 +121,10 @@
     flex-flow: row nowrap;
     gap: 0.4rem;
 
+    @include responsive('laptop') {
+      gap: 0.6rem;
+    }
+
     .task-action {
       background-size: contain;
       background-position: center;
@@ -110,6 +132,11 @@
       width: 3.2rem;
       height: 3.2rem;
       cursor: url('/icons/pointer.png'), pointer;
+
+      @include responsive('laptop') {
+        width: 3.6rem;
+        height: 3.6rem;
+      }
 
       &.edit {
         background-image: url('/icons/edit.png');

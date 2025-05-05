@@ -22,6 +22,11 @@ body {
   width: 85vw;
   margin: auto;
 }
+@media (min-width: 768px) {
+  body {
+    width: 40vw;
+  }
+}
 body::selection {
   background-color: #d9d9d9;
   color: #000000;
@@ -33,6 +38,12 @@ body::selection {
   align-items: center;
   margin-top: 2.4rem;
   gap: 2.4rem;
+}
+@media (min-width: 768px) {
+  .app {
+    margin-top: 5rem;
+    gap: 5rem;
+  }
 }
 .app .app-title {
   font-size: 3.2rem;
@@ -60,6 +71,11 @@ body::selection {
   cursor: url("/icons/pointer.png"), pointer;
   transition: ease all 0.4s;
 }
+@media (min-width: 768px) {
+  .bar .bar-item {
+    font-size: 1.6rem;
+  }
+}
 .bar .bar-item.active {
   color: #000000;
   background-color: #ffffff;
@@ -78,7 +94,7 @@ body::selection {
   align-items: center;
   z-index: 999999;
 }
-.modal.creat, .modal.put {
+.modal.post, .modal.put {
   display: flex;
 }
 .modal.close {
@@ -94,6 +110,11 @@ body::selection {
   justify-content: start;
   align-items: center;
   gap: 2rem;
+}
+@media (min-width: 768px) {
+  .modal .modal-wrapper {
+    width: 35%;
+  }
 }
 .modal .modal-wrapper .modal-title {
   font-size: 2.4rem;
@@ -125,6 +146,11 @@ body::selection {
   color: #000000;
   cursor: url("/icons/pointer.png"), pointer;
   height: 4rem;
+}
+@media (min-width: 768px) {
+  .modal .modal-wrapper .modal-form .modal-input {
+    height: 5rem;
+  }
 }
 .modal .modal-wrapper .modal-form .modal-input::placeholder {
   font-size: 1.4rem;
@@ -171,6 +197,11 @@ body::selection {
   font-size: 1.8rem;
   color: #808080;
 }
+@media (min-width: 768px) {
+  .tasks .tasks-title {
+    font-size: 2rem;
+  }
+}
 
 .task {
   display: flex;
@@ -199,7 +230,7 @@ body::selection {
 }
 .task .task-check.completed::after {
   content: "";
-  background-image: url("icons/check.png");
+  background-image: url("/icons/check.png");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -217,11 +248,21 @@ body::selection {
   font-size: 1.8rem;
   font-weight: bold;
 }
+@media (min-width: 768px) {
+  .task .task-info .task-title {
+    font-size: 2.2rem;
+  }
+}
 .task .task-info .task-title.completed {
   text-decoration: line-through;
 }
 .task .task-info .task-description {
   font-size: 1.4rem;
+}
+@media (min-width: 768px) {
+  .task .task-info .task-description {
+    font-size: 1.6rem;
+  }
 }
 .task .task-info .task-description.completed {
   text-decoration: line-through;
@@ -237,6 +278,11 @@ body::selection {
   display: flex;
   align-items: center;
 }
+@media (min-width: 768px) {
+  .task .task-info .task-bottom .task-item {
+    font-size: 1.4rem;
+  }
+}
 .task .task-info .task-bottom .task-item.completed {
   text-decoration: line-through;
 }
@@ -247,6 +293,13 @@ body::selection {
   background-repeat: no-repeat;
   background-size: 2rem;
   background-position: center;
+}
+@media (min-width: 768px) {
+  .task .task-info .task-bottom .task-item::before {
+    width: 2.4rem;
+    height: 2.4rem;
+    background-size: 2.4rem;
+  }
 }
 .task .task-info .task-bottom .task-item.date::before {
   background-image: url("/icons/calendar.png");
@@ -259,6 +312,11 @@ body::selection {
   flex-flow: row nowrap;
   gap: 0.4rem;
 }
+@media (min-width: 768px) {
+  .task .task-actions {
+    gap: 0.6rem;
+  }
+}
 .task .task-actions .task-action {
   background-size: contain;
   background-position: center;
@@ -266,6 +324,12 @@ body::selection {
   width: 3.2rem;
   height: 3.2rem;
   cursor: url("/icons/pointer.png"), pointer;
+}
+@media (min-width: 768px) {
+  .task .task-actions .task-action {
+    width: 3.6rem;
+    height: 3.6rem;
+  }
 }
 .task .task-actions .task-action.edit {
   background-image: url("/icons/edit.png");
@@ -289,6 +353,13 @@ body::selection {
   border-radius: 50%;
   cursor: url("/icons/pointer.png"), pointer;
 }
+@media (min-width: 768px) {
+  .add {
+    margin: 2.6rem;
+    width: 7rem;
+    height: 7rem;
+  }
+}
 .add::after {
   content: "";
   background-image: url("/icons/add.png");
@@ -296,6 +367,12 @@ body::selection {
   background-repeat: no-repeat;
   width: 2.5rem;
   height: 2.5rem;
+}
+@media (min-width: 768px) {
+  .add::after {
+    width: 3rem;
+    height: 3rem;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

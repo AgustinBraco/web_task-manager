@@ -33,6 +33,10 @@ body {
   width: 85vw;
   margin: auto;
 
+  @include responsive('laptop') {
+    width: 40vw;
+  }
+
   &::selection {
     background-color: $grey-light;
     color: $black;
