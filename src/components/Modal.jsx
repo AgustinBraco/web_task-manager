@@ -63,13 +63,14 @@ export const Modal = () => {
     !formData.title || !formData.description || !formData.date
 
   return (
-    <div className={`modal ${modalStatus}`}>
+    <div data-cy='modal' className={`modal ${modalStatus}`}>
       <div className="modal-wrapper">
-        <p className="modal-title">{modalTitle}</p>
+        <p data-cy='modal-title' className="modal-title">{modalTitle}</p>
         <form className="modal-form" onSubmit={handleSubmit}>
           <label htmlFor="title" className="modal-label">
             Título
             <input
+              data-cy="modal-input"
               className="modal-input"
               required
               name="title"
@@ -83,6 +84,7 @@ export const Modal = () => {
           <label htmlFor="description" className="modal-label">
             Descripción
             <input
+              data-cy="modal-description"
               className="modal-input"
               required
               name="description"
@@ -96,6 +98,7 @@ export const Modal = () => {
           <label htmlFor="date" className="modal-label">
             Vencimiento
             <input
+              data-cy="modal-date"
               className="modal-input"
               required
               name="date"
@@ -109,6 +112,7 @@ export const Modal = () => {
           <label htmlFor="priority" className="modal-label">
             Prioridad
             <select
+              data-cy="modal-priority"
               className="modal-input"
               required
               id="priority"
@@ -123,12 +127,14 @@ export const Modal = () => {
           </label>
 
           <input
+            data-cy="modal-submit"
             disabled={isFormInvalid}
             className="modal-button submit"
             type="submit"
             value="Aceptar"
           />
           <input
+            data-cy="modal-close"
             className="modal-button cancel"
             type="button"
             value="Cancelar"

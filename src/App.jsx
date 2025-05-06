@@ -5,7 +5,7 @@ const App = () => {
   return (
     <AppProvider>
       <div className="app">
-        <p className="app-title">Gestor de tareas</p>
+        <p data-cy='app-title' className="app-title">Gestor de tareas</p>
         <Bar />
         <Tasks />
         <Modal />

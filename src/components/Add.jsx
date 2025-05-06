@@ -8,5 +8,5 @@ export const Add = () => {
     setRequest({ method: 'create', id: null })
   }
 
-  return <button className="add" onClick={handleAdd}></button>
+  return <button data-cy='add' className="add" onClick={handleAdd}></button>
 }

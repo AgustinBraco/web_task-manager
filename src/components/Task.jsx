@@ -50,14 +50,15 @@ export const Task = ({ task }) => {
   }
 
   return (
-    <div className="task">
+    <div data-cy='task' className="task">
       <div
+        data-cy="task-check"
         className={`task-check ${states[task.completed]}`}
         onClick={toggleTask}
       ></div>
 
       <div className="task-info">
-        <p className={`task-title ${states[task.completed]}`}>{task.title}</p>
+        <p data-cy='task-title' className={`task-title ${states[task.completed]}`}>{task.title}</p>
         <p className={`task-description ${states[task.completed]}`}>
           {task.description}
         </p>
@@ -73,8 +74,16 @@ export const Task = ({ task }) => {
       </div>
 
       <div className="task-actions">
-        <div className="task-action edit" onClick={editTask}></div>
-        <div className="task-action delete" onClick={deleteTask}></div>
+        <div
+          data-cy="task-edit"
+          className="task-action edit"
+          onClick={editTask}
+        ></div>
+        <div
+          data-cy="task-delete"
+          className="task-action delete"
+          onClick={deleteTask}
+        ></div>
       </div>
     </div>
   )

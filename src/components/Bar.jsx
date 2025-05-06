@@ -22,9 +22,10 @@ export const Bar = () => {
   }
 
   return (
-    <div className="bar">
+    <div data-cy='bar' className="bar">
       {items.map(item => (
         <button
+          data-cy={`button-${item.toLowerCase()}`}
           key={item}
           onClick={() => filterTasks(item)}
           className={`bar-item ${selected === item ? 'active' : ''}`}

@@ -5,9 +5,11 @@ export const Tasks = () => {
   const { data } = useAppContext()
 
   return (
-    <div className="tasks" data-testid="tasks-container">
+    <div className="tasks" data-cy='tasks' data-testid="tasks">
       {data.length === 0 ? (
-        <p className="tasks-title">No hay tareas</p>
+        <p data-cy="tasks-title" className="tasks-title">
+          No hay tareas
+        </p>
       ) : (
         data.map(task => <Task key={task.id} task={task} />)
       )}

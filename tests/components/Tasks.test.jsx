@@ -19,7 +19,7 @@ describe('<Tasks />', () => {
     useAppContext.mockReturnValue({ data: [] })
     render(<Tasks />)
 
-    const tasksContainer = screen.getByTestId('tasks-container')
+    const tasksContainer = screen.getByTestId('tasks')
     expect(tasksContainer).toBeInTheDocument()
   })
 
