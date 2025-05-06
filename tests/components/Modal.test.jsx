@@ -20,7 +20,7 @@ describe('Modal component', () => {
     vi.clearAllMocks()
   })
 
-  it('Show correct title for create mode', async () => {
+  it('Render correct title for create mode', async () => {
     vi.doMock('../../src/context/AppContext.jsx', () => ({
       useAppContext: () => ({
         formData: {
@@ -30,7 +30,7 @@ describe('Modal component', () => {
           priority: 0,
           completed: 0
         },
-        request: { method: 'create' },
+        request: { method: 'create', id: null },
         setFormData: vi.fn(),
         modalStatus: 'open',
         setModalStatus: vi.fn(),
@@ -53,7 +53,7 @@ describe('Modal component', () => {
           priority: 0,
           completed: 0
         },
-        request: { method: 'create' },
+        request: { method: 'create', id: null },
         setFormData: vi.fn(),
         modalStatus: 'open',
         setModalStatus: vi.fn(),
@@ -79,7 +79,7 @@ describe('Modal component', () => {
           priority: 1,
           completed: 0
         },
-        request: { method: 'create' },
+        request: { method: 'create', id: null },
         setFormData: vi.fn(),
         modalStatus: 'open',
         setModalStatus,
@@ -138,7 +138,7 @@ describe('Modal component', () => {
           priority: 0,
           completed: 0
         },
-        request: { method: 'create' },
+        request: { method: 'create', id: null },
         setFormData: vi.fn(),
         modalStatus: 'open',
         setModalStatus,

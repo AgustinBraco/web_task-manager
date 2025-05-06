@@ -23,7 +23,7 @@ describe('<Tasks />', () => {
     expect(tasksContainer).toBeInTheDocument()
   })
 
-  it('Shows "No hay tareas" when there are no tasks', () => {
+  it('Show "No hay tareas" when there are no tasks', () => {
     useAppContext.mockReturnValue({ data: [] })
     render(<Tasks />)
 

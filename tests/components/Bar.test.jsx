@@ -37,7 +37,7 @@ describe('<Bar />', () => {
     expect(screen.getByText('Completas')).toBeInTheDocument()
   })
 
-  it('Active button has "active" class', () => {
+  it('Has the correct CSS class', () => {
     render(<Bar />)
     const activeButton = screen.getByText('Todas')
     expect(activeButton).toHaveClass('active')
@@ -69,7 +69,7 @@ describe('<Bar />', () => {
     })
   })
 
-  it('Show active tasks when clicking "Completas" button', async () => {
+  it('Show completed tasks when clicking "Completas" button', async () => {
     render(<Bar />)
     const completeButton = screen.getByText('Completas')
     fireEvent.click(completeButton)
