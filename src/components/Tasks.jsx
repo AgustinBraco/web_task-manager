@@ -5,7 +5,7 @@ export const Tasks = () => {
   const { data } = useAppContext()
 
   return (
-    <div className="tasks">
+    <div className="tasks" data-testid="tasks-container">
       {data.length === 0 ? (
         <p className="tasks-title">No hay tareas</p>
       ) : (
