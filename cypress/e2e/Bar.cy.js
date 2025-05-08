@@ -1,4 +1,4 @@
-describe('Bar', () => {
+describe('[Bar]', () => {
   beforeEach(() => cy.visit('/'))
 
   it('Verify if component is visible', () => {
