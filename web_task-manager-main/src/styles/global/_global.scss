@@ -1,0 +1,44 @@
+// Google font
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+// Colors
+$black: #000000;
+$white: #ffffff;
+$grey-dark: #808080;
+$grey-light: #d9d9d9;
+
+// Reset
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; // 1rem = 10px
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+
+// Styles
+body {
+  font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  background-color: $white;
+  cursor: url('/icons/cursor.png'), pointer;
+  overflow-x: hidden;
+
+  width: 85vw;
+  margin: auto;
+
+  @include responsive('laptop') {
+    width: 40vw;
+  }
+
+  &::selection {
+    background-color: $grey-light;
+    color: $black;
+  }
+}
